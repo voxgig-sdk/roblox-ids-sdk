@@ -1,0 +1,21 @@
+# API Information
+
+
+main: {
+  kit: {
+    info: {
+      auth: false
+      description: "Search the rblxdb catalogue of Roblox audio and decal asset IDs. No authentication. Responses are cached for an hour upstream and callers are asked to cache too. Every response carries an `attribution` block that non-commercial users are expected to display."
+      servers: [
+        {
+          url: "https://rblxdb.com/api/v1"
+        }
+      ]
+      summary: "Search the rblxdb catalogue of Roblox audio and decal asset IDs."
+      title: "Roblox IDs API"
+      version: "0.1.0"
+      website: "https://rblxdb.com"
+    }
+  }
+}
+

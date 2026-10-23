@@ -1,0 +1,118 @@
+openapi: 3.0.3
+info:
+  title: Roblox IDs API
+  description: >-
+    Search the rblxdb catalogue of Roblox audio and decal asset IDs.
+    No authentication. Responses are cached for an hour upstream and
+    callers are asked to cache too. Every response carries an
+    `attribution` block that non-commercial users are expected to display.
+  version: 0.1.0
+servers:
+  - url: https://rblxdb.com/api/v1
+paths:
+  /songs:
+    get:
+      operationId: listSongs
+      summary: Search audio asset IDs
+      parameters:
+        - name: q
+          in: query
+          required: false
+          description: Search by song name.
+          schema: { type: string }
+        - name: genre
+          in: query
+          required: false
+          description: Filter by genre, e.g. `pop`, `phonk`.
+          schema: { type: string }
+        - name: working
+          in: query
+          required: false
+          description: Set false to include IDs that have not been verified as working.
+          schema: { type: boolean }
+        - name: limit
+          in: query
+          required: false
+          description: Results per page. Upstream maximum is 100.
+          schema: { type: integer, maximum: 100 }
+      responses:
+        '200':
+          description: Matching songs.
+          content:
+            application/json:
+              schema: { $ref: '#/components/schemas/SongList' }
+  /decals:
+    get:
+      operationId: listDecals
+      summary: Search decal asset IDs
+      parameters:
+        - name: q
+          in: query
+          required: false
+          description: Search by decal name.
+          schema: { type: string }
+        - name: theme
+          in: query
+          required: false
+          description: >-
+            Filter by theme. Documented values: anime, memes, aesthetic,
+            cursed, cute, gaming, wallpapers, art.
+          schema: { type: string }
+        - name: limit
+          in: query
+          required: false
+          description: Results per page. Upstream maximum is 100.
+          schema: { type: integer, maximum: 100 }
+      responses:
+        '200':
+          description: Matching decals.
+          content:
+            application/json:
+              schema: { $ref: '#/components/schemas/DecalList' }
+components:
+  schemas:
+    Attribution:
+      type: object
+      properties:
+        text: { type: string }
+        url:  { type: string }
+        html: { type: string }
+    Song:
+      type: object
+      properties:
+        id:          { type: string }
+        name:        { type: string }
+        artist:      { type: string }
+        genre:       { type: string }
+        durationSec: { type: integer }
+        upVotes:     { type: integer }
+        isWorking:   { type: boolean }
+        verifiedAt:  { type: string, format: date-time }
+        url:         { type: string }
+    Decal:
+      type: object
+      properties:
+        id:           { type: string }
+        name:         { type: string }
+        themes:       { type: array, items: { type: string } }
+        upVotes:      { type: integer, nullable: true }
+        thumbnailUrl: { type: string }
+        url:          { type: string }
+    SongList:
+      type: object
+      properties:
+        count:       { type: integer }
+        source:      { type: string }
+        attribution: { $ref: '#/components/schemas/Attribution' }
+        songs:
+          type: array
+          items: { $ref: '#/components/schemas/Song' }
+    DecalList:
+      type: object
+      properties:
+        count:       { type: integer }
+        source:      { type: string }
+        attribution: { $ref: '#/components/schemas/Attribution' }
+        decals:
+          type: array
+          items: { $ref: '#/components/schemas/Decal' }

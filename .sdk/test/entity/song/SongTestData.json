@@ -1,0 +1,60 @@
+{
+  "existing": {
+    "song": {
+      "SONG00": {
+        "artist": "s5a",
+        "durationSec": 91,
+        "genre": "s5c",
+        "id": "SONG00",
+        "isWorking": true,
+        "name": "s5f",
+        "upVotes": 96,
+        "url": "s61",
+        "verifiedAt": "s62"
+      },
+      "SONG01": {
+        "artist": "sb4",
+        "durationSec": 181,
+        "genre": "sb6",
+        "id": "SONG01",
+        "isWorking": true,
+        "name": "sb9",
+        "upVotes": 186,
+        "url": "sbb",
+        "verifiedAt": "sbc"
+      },
+      "SONG02": {
+        "artist": "s10e",
+        "durationSec": 271,
+        "genre": "s110",
+        "id": "SONG02",
+        "isWorking": true,
+        "name": "s113",
+        "upVotes": 276,
+        "url": "s115",
+        "verifiedAt": "s116"
+      }
+    }
+  },
+  "new": {
+    "song": {
+      "song_ref01": {
+        "artist": "s168",
+        "durationSec": 361,
+        "genre": "s16a",
+        "isWorking": true,
+        "name": "s16d",
+        "upVotes": 366,
+        "url": "s16f",
+        "verifiedAt": "s170"
+      }
+    }
+  },
+  "requests": {
+    "GET /songs": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    }
+  }
+}

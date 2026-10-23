@@ -1,0 +1,135 @@
+# Entity: song
+
+main: kit: entity: song: {
+
+  alias: field: {}
+
+  fields: {
+    artist: {
+      h: "Artist"
+      n: "artist"
+      r: false
+      t: "`$STRING`"
+    }
+    durationSec: {
+      h: "Duration Sec"
+      n: "durationSec"
+      r: false
+      t: "`$INTEGER`"
+    }
+    genre: {
+      h: "Genre"
+      n: "genre"
+      r: false
+      t: "`$STRING`"
+    }
+    id: {
+      h: "Id"
+      n: "id"
+      r: false
+      t: "`$STRING`"
+    }
+    isWorking: {
+      h: "Is Working"
+      n: "isWorking"
+      r: false
+      t: "`$BOOLEAN`"
+    }
+    name: {
+      h: "Name"
+      n: "name"
+      r: false
+      t: "`$STRING`"
+    }
+    upVotes: {
+      h: "Up Votes"
+      n: "upVotes"
+      r: false
+      t: "`$INTEGER`"
+    }
+    url: {
+      h: "Url"
+      n: "url"
+      r: false
+      t: "`$STRING`"
+    }
+    verifiedAt: {
+      fo: "date-time"
+      h: "Verified At"
+      n: "verifiedAt"
+      r: false
+      t: "`$STRING`"
+    }
+  }
+
+  id: {
+    field: "id"
+    name: "id"
+  }
+
+  name: "song"
+  op: {
+    list: {
+      name: "list"
+      points: [
+        {
+          co: {
+            id: "GET /songs"
+            source: "openapi3"
+            version: 2
+          }
+          g: {
+            query: [
+              {
+                k: "query"
+                n: "genre"
+                or: "genre"
+                r: false
+                t: "`$STRING`"
+              }
+              {
+                k: "query"
+                n: "limit"
+                or: "limit"
+                r: false
+                t: "`$INTEGER`"
+              }
+              {
+                k: "query"
+                n: "q"
+                or: "q"
+                r: false
+                t: "`$STRING`"
+              }
+              {
+                k: "query"
+                n: "working"
+                or: "working"
+                r: false
+                t: "`$BOOLEAN`"
+              }
+            ]
+          }
+          m: "GET"
+          o: "/songs"
+          rs: {
+            kind: "json"
+            media: "application/json"
+          }
+          s: [
+            {
+              lit: "songs"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+      ]
+    }
+  }
+
+
+
+}

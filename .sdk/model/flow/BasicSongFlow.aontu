@@ -1,0 +1,22 @@
+# BasicSongFlow
+
+main: kit: flow: BasicSongFlow:
+{
+  entity: "song",
+  kind: "basic",
+  name: "BasicSongFlow",
+  step: [
+    {
+      o: "list",
+      v: [
+        {
+          apply: "ItemExists",
+          def: {
+            ref: "song_ref01"
+          }
+        }
+      ]
+    }
+  ],
+  "key$": "BasicSongFlow"
+}

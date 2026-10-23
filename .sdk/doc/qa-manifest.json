@@ -1,0 +1,14 @@
+{
+  "files": [
+    "SUMMARY.md"
+  ],
+  "config": ".sdk/doc/qa/vale.ini",
+  "routes": {},
+  "quoted": {
+    "SUMMARY.md": [
+      "Matching decals",
+      "Matching songs",
+      "Search the rblxdb catalogue of Roblox audio and decal asset IDs. No authentication. Responses are cached for an hour upstream and callers are asked to cache too. Every response carries an `attribution` block that non-commercial users are expected to display."
+    ]
+  }
+}

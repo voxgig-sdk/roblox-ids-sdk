@@ -1,0 +1,48 @@
+{
+  "existing": {
+    "decal": {
+      "DECAL00": {
+        "id": "DECAL00",
+        "name": "s3d",
+        "themes": [],
+        "thumbnailUrl": "s3f",
+        "upVotes": 64,
+        "url": "s41"
+      },
+      "DECAL01": {
+        "id": "DECAL01",
+        "name": "s79",
+        "themes": [],
+        "thumbnailUrl": "s7b",
+        "upVotes": 124,
+        "url": "s7d"
+      },
+      "DECAL02": {
+        "id": "DECAL02",
+        "name": "sb5",
+        "themes": [],
+        "thumbnailUrl": "sb7",
+        "upVotes": 184,
+        "url": "sb9"
+      }
+    }
+  },
+  "new": {
+    "decal": {
+      "decal_ref01": {
+        "name": "sf1",
+        "themes": [],
+        "thumbnailUrl": "sf3",
+        "upVotes": 244,
+        "url": "sf5"
+      }
+    }
+  },
+  "requests": {
+    "GET /decals": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    }
+  }
+}

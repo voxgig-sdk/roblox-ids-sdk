@@ -1,0 +1,22 @@
+# BasicDecalFlow
+
+main: kit: flow: BasicDecalFlow:
+{
+  entity: "decal",
+  kind: "basic",
+  name: "BasicDecalFlow",
+  step: [
+    {
+      o: "list",
+      v: [
+        {
+          apply: "ItemExists",
+          def: {
+            ref: "decal_ref01"
+          }
+        }
+      ]
+    }
+  ],
+  "key$": "BasicDecalFlow"
+}
